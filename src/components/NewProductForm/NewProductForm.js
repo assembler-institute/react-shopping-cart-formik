@@ -76,6 +76,7 @@ function NewProductForm({ toggleNewProductForm, saveNewProduct }) {
             isValid,
           }) => (
             <form onSubmit={handleSubmit}>
+              {/* Title */}
               <Input
                 type="text"
                 label="Product title"
@@ -87,7 +88,102 @@ function NewProductForm({ toggleNewProductForm, saveNewProduct }) {
                 hasErrorMessage={touched.title}
                 errorMessage={errors.title}
               />
-              {/* the other fields... */}
+              {/* Price */}
+              <Input
+                type="number"
+                label="Product price"
+                id="price"
+                value={values.price}
+                placeholder=""
+                handleChange={handleChange}
+                handleBlur={handleBlur}
+                hasErrorMessage={touched.price}
+                errorMessage={errors.price}
+              />
+              {/* Image */}
+              <Input
+                type="url"
+                label="Product image"
+                id="img"
+                value={values.img}
+                placeholder="Image url"
+                handleChange={handleChange}
+                handleBlur={handleBlur}
+                hasErrorMessage={touched.img}
+                errorMessage={errors.img}
+              />
+              {/* Short description */}
+              <Input
+                type="text"
+                label="Short description"
+                id="shortDescription"
+                value={values.shortDescription}
+                placeholder="Add a short description"
+                handleChange={handleChange}
+                handleBlur={handleBlur}
+                hasErrorMessage={touched.shortdescription}
+                errorMessage={errors.shortdescription}
+              />
+              {/* Long description */}
+              <Input
+                type="text"
+                label="Long description"
+                id="longDescription"
+                value={values.longDescription}
+                placeholder="Add a long description"
+                handleChange={handleChange}
+                handleBlur={handleBlur}
+                hasErrorMessage={touched.longDescription}
+                errorMessage={errors.longDescription}
+              />
+              {/* Units in stock */}
+              <Input
+                type="number"
+                label="Units in stock"
+                id="unitsInStock"
+                value={values.unitsInStock}
+                placeholder=""
+                handleChange={handleChange}
+                handleBlur={handleBlur}
+                hasErrorMessage={touched.unitsInStock}
+                errorMessage={errors.unitsInStock}
+              />
+              {/* First name */}
+              <Input
+                type="text"
+                label="First name"
+                id="authorFirstName"
+                value={values.authorFirstName}
+                placeholder="John"
+                handleChange={handleChange}
+                handleBlur={handleBlur}
+                hasErrorMessage={touched.authorFirstName}
+                errorMessage={errors.authorFirstName}
+              />
+              {/* Last name */}
+              <Input
+                type="text"
+                label="Last name"
+                id="authorLastName"
+                value={values.authorLastName}
+                placeholder="Smith"
+                handleChange={handleChange}
+                handleBlur={handleBlur}
+                hasErrorMessage={touched.authorLastName}
+                errorMessage={errors.authorLastName}
+              />
+              {/* Email */}
+              <Input
+                type="email"
+                label="Email"
+                id="authorEmail"
+                value={values.authorEmail}
+                placeholder="hello@johnsmith.com"
+                handleChange={handleChange}
+                handleBlur={handleBlur}
+                hasErrorMessage={touched.authorEmail}
+                errorMessage={errors.authorEmail}
+              />
               <Button submitButton block disabled={isValidating || !isValid}>
                 Submit
               </Button>
