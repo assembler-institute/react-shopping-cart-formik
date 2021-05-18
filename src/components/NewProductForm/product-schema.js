@@ -7,7 +7,7 @@ const productSchema = Yup.object().shape({
     .required("The title is required"),
   price: Yup.number()
     .integer("The price must be an integer")
-    .positive()
+    .positive("The price must be a positive number")
     .required("The price is required"),
   img: Yup.string()
     .url("The image url is invalid")
