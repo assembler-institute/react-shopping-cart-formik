@@ -87,7 +87,94 @@ function NewProductForm({ toggleNewProductForm, saveNewProduct }) {
                 hasErrorMessage={touched.title}
                 errorMessage={errors.title}
               />
-              {/* the other fields... */}
+              <Field
+                type="number"
+                name="price"
+                id="price"
+                value={values.price}
+                placeholder="Product price"
+                handleChange={handleChange}
+                handleBlur={handleBlur}
+                hasErrorMessage={touched.price}
+                errorMessage={errors.price}
+              />
+              <Field
+                type="text"
+                name="img"
+                id="img"
+                value={values.img}
+                placeholder="Product img"
+                handleChange={handleChange}
+                handleBlur={handleBlur}
+                hasErrorMessage={touched.img}
+                errorMessage={errors.img}
+              />
+              <Field
+                type="text"
+                name="shortDescription"
+                id="shortDescription"
+                value={values.shortDescription}
+                placeholder="Product short description"
+                handleChange={handleChange}
+                handleBlur={handleBlur}
+                hasErrorMessage={touched.shortDescription}
+                errorMessage={errors.shortDescription}
+              />
+              <Field
+                type="text"
+                name="longDescription"
+                id="longDescription"
+                value={values.longDescription}
+                placeholder="Product long description"
+                handleChange={handleChange}
+                handleBlur={handleBlur}
+                hasErrorMessage={touched.longDescription}
+                errorMessage={errors.longDescription}
+              />
+              <Field
+                type="number"
+                name="unitsInStock"
+                id="unitsInStock"
+                value={values.unitsInStock}
+                placeholder="Product units in stock"
+                handleChange={handleChange}
+                handleBlur={handleBlur}
+                hasErrorMessage={touched.unitsInStock}
+                errorMessage={errors.unitsInStock}
+              />
+              <Field
+                type="text"
+                name="authorFirstName"
+                id="authorFirstName"
+                value={values.authorFirstName}
+                placeholder="Product author first name"
+                handleChange={handleChange}
+                handleBlur={handleBlur}
+                hasErrorMessage={touched.authorFirstName}
+                errorMessage={errors.authorFirstName}
+              />
+              <Field
+                type="text"
+                name="authorLastName"
+                id="authorLastName"
+                value={values.authorLastName}
+                placeholder="Product author lastname"
+                handleChange={handleChange}
+                handleBlur={handleBlur}
+                hasErrorMessage={touched.authorLastName}
+                errorMessage={errors.authorLastName}
+              />
+              <Field
+                type="email"
+                name="authorEmail"
+                id="email"
+                value={values.email}
+                placeholder="Product email"
+                handleChange={handleChange}
+                handleBlur={handleBlur}
+                hasErrorMessage={touched.email}
+                errorMessage={errors.email}
+              />
               <Button submitButton block disabled={isValidating || !isValid}>
                 Submit
               </Button>
