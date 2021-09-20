@@ -62,6 +62,7 @@ function NewProductForm({ toggleNewProductForm, saveNewProduct }) {
           }}
           validationSchema={productSchema}
           onSubmit={(values) => {
+            console.log(values);
             const newProduct = addProductDetails(values);
             saveNewProduct(newProduct);
           }}
