@@ -2,10 +2,11 @@ import React from "react";
 import { v4 as uuid } from "uuid";
 import { Formik } from "formik";
 
-import Input from "../Input";
+/* import Input from "../Input"; */
 import Button from "../Button";
 
 import productSchema from "./product-schema";
+import Input from "../Input/Input";
 
 function addProductDetails(product) {
   return {
@@ -61,6 +62,7 @@ function NewProductForm({ toggleNewProductForm, saveNewProduct }) {
           }}
           validationSchema={productSchema}
           onSubmit={(values) => {
+            console.log(values);
             const newProduct = addProductDetails(values);
             saveNewProduct(newProduct);
           }}
@@ -76,22 +78,109 @@ function NewProductForm({ toggleNewProductForm, saveNewProduct }) {
             isValid,
           }) => (
             <form onSubmit={handleSubmit}>
-              <Input
-                type="text"
-                label="Product title"
-                id="title"
-                value={values.title}
-                placeholder="Product title"
-                handleChange={handleChange}
-                handleBlur={handleBlur}
-                hasErrorMessage={touched.title}
-                errorMessage={errors.title}
-              />
-              {/* the other fields... */}
-              <Button submitButton block disabled={isValidating || !isValid}>
-                Submit
-              </Button>
-            </form>
+            <Input
+              type="text"
+              label="Product title"
+              id="title"
+              value={values.title}
+              placeholder="Product title"
+              handleChange={handleChange}
+              handleBlur={handleBlur}
+              hasErrorMessage={touched.title}
+              errorMessage={errors.title}
+            />
+            <Input
+              type="number"
+              label="Product price"
+              id="price"
+              value={values.price}
+              placeholder="Product price"
+              handleChange={handleChange}
+              handleBlur={handleBlur}
+              hasErrorMessage={touched.price}
+              errorMessage={errors.price}
+            />
+            <Input
+              type="text"
+              label="Product image url"
+              id="img"
+              value={values.img}
+              placeholder="Product image url"
+              handleChange={handleChange}
+              handleBlur={handleBlur}
+              hasErrorMessage={touched.img}
+              errorMessage={errors.img}
+            />
+            <Input
+              type="text"
+              label="Short description"
+              id="shortDescription"
+              value={values.shortDescription}
+              placeholder="Short description"
+              handleChange={handleChange}
+              handleBlur={handleBlur}
+              hasErrorMessage={touched.shortDescription}
+              errorMessage={errors.shortDescription}
+            />
+            <Input
+              type="text"
+              label="Long description"
+              id="longDescription"
+              value={values.longDescription}
+              placeholder="Long description"
+              handleChange={handleChange}
+              handleBlur={handleBlur}
+              hasErrorMessage={touched.longDescription}
+              errorMessage={errors.longDescription}
+            />
+            <Input
+              type="number"
+              label="Units in stock"
+              id="unitsInStock"
+              value={values.unitsInStock}
+              placeholder="Units in stock"
+              handleChange={handleChange}
+              handleBlur={handleBlur}
+              hasErrorMessage={touched.unitsInStock}
+              errorMessage={errors.unitsInStock}
+            />
+            <Input
+              type="text"
+              label="Author first name"
+              id="authorFirstName"
+              value={values.authorFirstName}
+              placeholder="Author first name"
+              handleChange={handleChange}
+              handleBlur={handleBlur}
+              hasErrorMessage={touched.authorFirstName}
+              errorMessage={errors.authorFirstName}
+            />
+            <Input
+              type="text"
+              label="Author last name"
+              id="authorLastName"
+              value={values.authorLastName}
+              placeholder="Author last name"
+              handleChange={handleChange}
+              handleBlur={handleBlur}
+              hasErrorMessage={touched.authorLastName}
+              errorMessage={errors.authorLastName}
+            />
+            <Input
+              type="email"
+              label="Author email"
+              id="authorEmail"
+              value={values.authorEmail}
+              placeholder="Author email"
+              handleChange={handleChange}
+              handleBlur={handleBlur}
+              hasErrorMessage={touched.authorEmail}
+              errorMessage={errors.authorEmail}
+            />
+            <Button submitButton block disabled={isValidating || !isValid}>
+              Submit
+            </Button>
+          </form>
           )}
         </Formik>
       </div>
